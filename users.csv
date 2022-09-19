@@ -1,0 +1,5 @@
+username,email,user_group
+user1,user1@example.com,DBA
+user2,user2@example.com,Dev
+user3,user3@example.com,DevOps
+user4,user4@example.com,DevSecOps
