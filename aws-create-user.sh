@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-AWS_PAGE_LOGIN="https://123456789012.signin.aws.amazon.com/console"
+set -o errexit
+
 FILE_CSV='users.csv'
 IFS=','
 
@@ -24,9 +25,9 @@ while read -r username email user_group ; do
 
     random_password=$(openssl rand -base64 20)
 
-    aws iam create-user --user-name ${username}
-    aws iam create-login-profile --password-reset-required --user-name ${username} --password ${random_password}
-    aws iam add-user-to-group --user-name ${username} --group-name ${user_group}
+    aws iam create-user --user-name ${username} >> output.log
+    aws iam create-login-profile --password-reset-required --user-name ${username} --password ${random_password}  >> output.log
+    aws iam add-user-to-group --user-name ${username} --group-name ${user_group}  >> output.log
 
     echo "generated: ${username} ${random_password}"
 done < ${FILE_CSV}

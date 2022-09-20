@@ -1,5 +1,9 @@
 username,email,user_group
-user1,user1@example.com,DBA
-user2,user2@example.com,Dev
-user3,user3@example.com,DevOps
-user4,user4@example.com,DevSecOps
+bob,bob@example.com,Admins
+susan,susan@example.com,Admins
+nate,nate@example.com,Developers
+brad,brad@example.com,Developers
+devapp1,devapp1@example.com,Developers
+cathy,cathy@example.com,Test
+allen,allen@example.com,Test
+testapp1,testapp1@example.com,Test
